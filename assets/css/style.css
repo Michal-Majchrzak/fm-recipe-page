@@ -71,3 +71,110 @@ body {
     background-color: var(--color-stone-150);
     height: 1px;
 }
+
+.card h1, .card h2 {
+    /* Typography */
+    font-family: Young Serif, sans-serif;
+    font-weight: 400;
+    color: var(--color-brown-800);
+}
+
+.card .title {
+    /* Typography */
+    font-size: 2.25rem;
+    line-height: 100%;
+    color: var(--color-stone-900);
+}
+
+.card .heading {
+    /* Typogrpahy */
+    font-size: 1.75rem;
+    line-height: 100%;
+}
+
+.card ol, .card ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-100);
+}
+
+ol, ul {
+    padding-left: 8px;
+}
+
+li {
+    margin-left: 16px;
+}
+
+li::marker {
+    color: var(--color-brown-800);
+    font-weight: 700;
+}
+
+.quotation {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+    padding: var(--space-300);
+    background-color: var(--color-rose-50);
+    border-radius: 12px;
+}
+
+.quotation h2 {
+    color: var(--color-rose-800);
+    font-family: Outfit;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+}
+
+tr {
+    margin-top: 12px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid var(--color-stone-150);
+    display: flex;
+    justify-content: space-evenly;
+    gap:16px;
+}
+
+tr > :first-child {
+    padding-left: 32px;
+    font-weight: 400;
+}
+
+tr > :last-child {
+    padding-right: 32px;
+    font-weight: 700;
+    color: var(--color-brown-800);
+}
+
+tr:first-of-type {
+    margin-top: 0;
+}
+
+tr:last-of-type{
+    border: none;
+    padding-bottom: 0;
+}
+
+caption, th {
+    text-align: left;
+}
+
+tr * {
+    width: 100%;
+}
+p {
+    line-height: 150%;
+    
+}
