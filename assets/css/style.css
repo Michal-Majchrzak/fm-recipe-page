@@ -37,6 +37,9 @@ body {
 }
 
 .card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
     /* Appearence */
     background-color: var(--color-white);
     /* Typography */
@@ -81,7 +84,7 @@ body {
 
 .card .title {
     /* Typography */
-    font-size: 2.25rem;
+    font-size: clamp(2.25rem, calc(100vw/12), 2.5rem);
     line-height: 100%;
     color: var(--color-stone-900);
 }
@@ -111,7 +114,7 @@ li::marker {
     font-weight: 700;
 }
 
-.quotation {
+section.quotation {
     display: flex;
     flex-direction: column;
     gap: var(--space-200);
@@ -120,11 +123,12 @@ li::marker {
     border-radius: 12px;
 }
 
-.quotation h2 {
+section.quotation h2 {
     color: var(--color-rose-800);
     font-family: Outfit;
     font-size: 20px;
     font-weight: 600;
+    line-height: 100%;
 }
 
 table {
@@ -177,4 +181,45 @@ tr * {
 p {
     line-height: 150%;
     
+}
+
+/* Responsive layout */
+
+@media screen and (min-width: 481px) {
+    body {
+        /* Padding should grow from 481px viewport width until it reach width
+        of 768px - then padding should keep values set by spacing vars. */
+        padding: min(17vw, var(--space-1600)) min(6.25vw, var(--space-600));
+    }
+
+    .card {
+        /* Layout */
+        gap: var(--space-500);
+        padding: min(6vw, var(--space-500));
+        /* Appearence */
+        border-radius: var(--space-300);
+    }
+
+    .card .card-img {
+        height: 18.75rem;
+        object-fit: cover;
+        /* Appear */
+        border-radius: var(--space-150);
+    }
+
+    .card .container {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .card {
+        max-width: 38.5rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .card {
+        max-width: min(80vw, 46rem);
+    }
 }
