@@ -107,14 +107,14 @@ section.highlighted {
 }
 
 section.highlighted h2 {
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--color-rose-800);
 }
 
-.text-bold {
-    font-weight: 700;
+.highlighted li::marker {
+    color: var(--color-rose-800);
 }
 
 .card ul,
@@ -126,57 +126,63 @@ section.highlighted h2 {
     padding-left: var(--space-200);
 }
 
+.card ul {
+    list-style: disc;
+}
+
 .card li {
     padding-left: var(--space-200);
 }
 
-
-table {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-tbody {
-    display: flex;
-    flex-direction: column;
-}
-
-tr {
-    margin-top: 12px;
-    padding-bottom: 11px;
-    border-bottom: 1px solid var(--color-stone-150);
-    display: flex;
-    justify-content: space-evenly;
-    gap:16px;
-}
-
-tr > :first-child {
-    padding-left: 32px;
-    font-weight: 400;
-}
-
-tr > :last-child {
-    padding-right: 32px;
-    font-weight: 700;
+.card li::marker {
     color: var(--color-brown-800);
+    font-family: Outfit !important;
+    font-weight: 700;
+    line-height: 150%;
 }
 
-tr:first-of-type {
-    margin-top: 0;
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
 }
 
-tr:last-of-type{
-    border: none;
-    padding-bottom: 0;
-}
-
-caption, th {
+.table * {
+    /* Sets width of every table child node - used to evenly distribue free space between <tr> child nodes */
+    width: 100%;
+    /* Sets font weight of every table child node - overwrites defatul bold font weight of <th> */
+    font-weight: 400;
+    /* Sets text align of every table child node - overwrites default center align of <caption> and <th> */
     text-align: left;
 }
 
-tr * {
-    width: 100%;
+.table tr {
+    display: flex;
+    gap: var(--space-200);
+
+    padding-top: var(--space-150);
+    padding-bottom: calc(var(--space-150) - 1px);
+    padding-left: var(--space-400);
+    padding-right: var(--space-400);
+
+    border-bottom: 1px solid var(--color-stone-150);
+}
+
+.table tr:first-of-type {
+    padding-top: 0;
+}
+
+.table tr:last-of-type {
+    padding-bottom: 0;
+    border: none;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.color-brown-800 {
+    color:var(--color-brown-800);
 }
 
 /* Responsive layout */
